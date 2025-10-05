@@ -40,7 +40,7 @@ A comprehensive network traffic monitoring and anomaly detection system built wi
 
 ## Prerequisites
 
-- Python 3.8+
+- Python 3.12 (or Python 3.8+)
 - PostgreSQL 12+
 - pip (Python package manager)
 
