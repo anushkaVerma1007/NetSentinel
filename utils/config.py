@@ -10,7 +10,7 @@ MAX_CONNECTIONS = 5
 DB_CONFIG = {
     'host': 'localhost',
     'database': 'netsentinel',
-    'user': 'postgres',
+    'user': 'my_username',
     'password': 'my_password',
     'port': 5432
 }
