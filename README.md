@@ -49,7 +49,7 @@ A comprehensive network traffic monitoring and anomaly detection system built wi
 ### 1. Clone the Repository
 
 ```bash
-git clone <your-repo-url>
+git clone [<your-repo-url>](https://github.com/anushkaVerma1007/NetSentinel.git)
 cd NetSentinel
 ```
 
@@ -68,7 +68,6 @@ CREATE DATABASE netsentinel;
 -- Connect to database
 \c netsentinel
 
--- The table will be created automatically by the application
 ```
 
 ### 4. Configure Settings
@@ -92,12 +91,6 @@ DB_CONFIG = {
 ```bash
 cd server
 python server.py
-```
-
-You should see:
-```
- NetSentinel Server started on localhost:9999
- Listening for connections...
 ```
 
 ### Step 2: Start the Web Dashboard
@@ -177,90 +170,6 @@ Clients generate random network packets with:
 - Real-time dashboard with interactive charts
 - Filter and search capabilities
 
-##  Testing
-
-### Generate Normal Traffic
-```bash
-python client.py
-# Choose option 2 for continuous traffic
-# Set delay to 1 second
-```
-
-### Generate Burst Traffic
-```bash
-# Run 3-4 clients simultaneously
-# This tests multi-threading capabilities
-```
-
-### Test Anomaly Detection
-The client automatically generates anomalous packets (very large or very small). Watch the dashboard for red "ANOMALY" badges.
-
-##  Performance
-
-- Handles up to 5 concurrent connections (configurable)
-- Processes ~10-20 packets per second per client
-- ML inference: <10ms per packet
-- Database insertion: <5ms per packet
-
-##  Customization
-
-### Change Server Port
-Edit `utils/config.py`:
-```python
-SERVER_PORT = 8888  # Your custom port
-```
-
-### Adjust ML Sensitivity
-Edit `utils/config.py`:
-```python
-CONTAMINATION = 0.15  # Higher = more anomalies detected
-```
-
-### Add New Protocols
-Edit `utils/config.py`:
-```python
-PROTOCOLS = ['TCP', 'UDP', 'ICMP', 'HTTP', 'HTTPS', 'FTP', 'SSH']
-```
-
-##  Database Schema
-
-```sql
-CREATE TABLE packets (
-    id SERIAL PRIMARY KEY,
-    source_ip VARCHAR(15) NOT NULL,
-    dest_ip VARCHAR(15) NOT NULL,
-    packet_size INTEGER NOT NULL,
-    protocol VARCHAR(10) NOT NULL,
-    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    anomaly_flag BOOLEAN DEFAULT FALSE
-);
-```
-
-##  Troubleshooting
-
-### "Connection Refused" Error
-- Ensure server is running on the correct port
-- Check firewall settings
-- Verify SERVER_HOST and SERVER_PORT in config.py
-
-### Database Connection Error
-- Verify PostgreSQL is running
-- Check database credentials in config.py
-- Ensure database 'netsentinel' exists
-
-### Model Training Error
-- Ensure at least 50 packets in database
-- Check sklearn installation
-- Verify ml/ directory has write permissions
-
-##  Learning Outcomes
-
-This project demonstrates:
-- **Networking**: Socket programming, client-server architecture
-- **OS Concepts**: Multi-threading, concurrent processing, FCFS scheduling
-- **DBMS**: PostgreSQL, CRUD operations, query optimization
-- **AI/ML**: Isolation Forest, anomaly detection, model retraining
-- **Web Development**: Flask API, REST endpoints, real-time visualization
 
 ##  Technologies Used
 
@@ -272,11 +181,6 @@ This project demonstrates:
 - **Flask**: Web framework
 - **Chart.js**: Data visualization
 - **HTML/CSS/JavaScript**: Frontend
-
-
-##  Author
-
-Built as a comprehensive project demonstrating networking, OS concepts, database management, and machine learning.
 
 ---
 
