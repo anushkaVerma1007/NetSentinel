@@ -49,7 +49,7 @@ A comprehensive network traffic monitoring and anomaly detection system built wi
 ### 1. Clone the Repository
 
 ```bash
-git clone [<your-repo-url>](https://github.com/anushkaVerma1007/NetSentinel.git)
+git clone https://github.com/anushkaVerma1007/NetSentinel.git
 cd NetSentinel
 ```
 
